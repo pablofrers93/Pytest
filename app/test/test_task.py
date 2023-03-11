@@ -11,7 +11,10 @@ def is_available_to_skip():
 
 @pytest.fixture
 def username():
-    return 'Cody'
+    # Ejecutar acciones antes o despues de las pruebas unitarias
+    print('>>> Ejecutamos el codigo antes de la prueba')
+    yield 'Cody'
+    print('>>> Ejecutamos el codigo despues de la prueba')
 
 @pytest.fixture
 def password():
