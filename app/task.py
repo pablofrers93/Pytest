@@ -1,3 +1,8 @@
+from datetime import datetime
+
+
+class DueDateError(Exception):
+    pass
 class Task():
 
    def __init__(self, title, description, assigned_to, due_date):
@@ -6,3 +11,5 @@ class Task():
        self.assigned_to = assigned_to
        self.due_date = due_date
        
+       if due_date < datetime.now():
+           raise DueDateError('Lo sentimos, la fecha no es valida')
