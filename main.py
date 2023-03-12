@@ -6,7 +6,10 @@ import logging
 # ERROR = 40 = error
 # CRITICAL = 50 =critical
 
-logging.basicConfig(level = 20)
+logging.basicConfig(level = logging.INFO,
+                    format = "%(threadName)s - %(levelname)s - %(asctime)s - Message: %(message)s",
+                    datefmt = "%Y/%m/%d"
+                    )
 
 def suma(numero1 : int, numero2: int) -> int:
     """Permite sumar dos numeros enteros
